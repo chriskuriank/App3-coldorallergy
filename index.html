@@ -51,8 +51,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		function mytestresults(){
 			var total_questionss = allergy_count + cold_count; //variable of the total count is created by adding both the amount of allergy and cold count
 
-			var Percent of allergy = (allergy_count / total_questionss * 100); //the equation for counting the allergy percentage which is (allergy/total) times 100 and rounds it to the second decimal place
-            var Percent of cold = (cold_count / total_questionss * 100);  //the equation for counting the cold percentage which is (cold/total) times 100 and rounds it to the second decimal place
+			var Percent_allergy = (allergy_count / total_questionss * 100); //the equation for counting the allergy percentage which is (allergy/total) times 100 and rounds it to the second decimal place
+            var Percent_cold = (cold_count / total_questionss * 100);  //the equation for counting the cold percentage which is (cold/total) times 100 and rounds it to the second decimal place
 
 			var resultText = document.getElementById("resultsinformation"); //creates a variable that can be used to change things inside later
             resultText.innerHTML = "Allergy probability= " + Percent of allergy + "%<br> Cold probability = " + Percent of cold + "%"; 
@@ -167,7 +167,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         <a href="#results"  onclick="allergyAdd();mytestresults();"  class="w3-btn w3-black">No</a>  <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is no-->
 	</div>
 </div>	
-	<div class="page" id="#results">  <!-- created a reusable class and id-->
+	<div class="page" id="results">  <!-- created a reusable class and id-->
 	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
 		<h1>Results</h1> 
 	</div>
