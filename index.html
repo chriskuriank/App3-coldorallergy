@@ -42,15 +42,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         function allergyAdd(){  //creating the function for counting allergies everytime the person presses yes
             allergy_count = allergy_count + 1; //the allergy count goes up by one everytime the press yes
-		alert(allergy_count);
 
         }
 
         function coldAdd(){ //creating the function for counting cold everytime the person presses yes
             cold_count = cold_count + 1; //the cold count goes up by one everytime the press yes
         }
-		function showResults(){
-			var total_count = allergy_count + cold_count; //variable of the total count is created by adding both the allergy and cold count
+		function mytestresults(){
+			var total_count = allergy_count + cold_count; //variable of the total count is created by adding both the amount of allergy and cold count
 
 			var allergyPercent = total_count > 0 ? (allergy_count / total_count * 100).toFixed(2) : 0; //the equation for counting the allergy percentage which is (allergy/total) times 100 and rounds it to the second decimal place
             var coldPercent = total_count > 0 ? (cold_count / total_count * 100).toFixed(2) : 0;  //the equation for counting the cold percentage which is (cold/total) times 100 and rounds it to the second decimal place
@@ -164,8 +163,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div class="content w3-container">
 		<p>Do you have muscle pain?</p> <!-- question number 4-->
-		<a href="#results"  onclick="coldAdd(); showResults();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
-        <a href="#results"  onclick="allergyAdd();showResults();"  class="w3-btn w3-black">No</a>  <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is no-->
+		<a href="#results"  onclick="coldAdd(); mytestresults();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
+        <a href="#results"  onclick="allergyAdd();mytestresults();"  class="w3-btn w3-black">No</a>  <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is no-->
 	</div>
 </div>	
 	<div class="page" id="results">  <!-- created a reusable class and id-->
@@ -174,7 +173,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 		<div class="content w3-container">
 			<p id="resultsinformation"></p> <!-- using the variable created before it creates a result-->
-			<a href="#header" onclick="location.reload();" class="w3-btn w3-black">Start Over</a> <!-- creates an option to restart-->
 		</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p> 
