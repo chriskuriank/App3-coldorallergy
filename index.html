@@ -36,26 +36,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var allergy_count = 0;// creating a variable and initializing it as 0
+        var cold_count = 0;// creating a variable and initializing it as 0
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
+        function allergyAdd(){  //creating the function for counting allergies everytime the person presses yes
+            allergy_count = allergy_count + 1; //the allergy count goes up by one everytime the press yes
 		alert(allergy_count);
 
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
+        function coldAdd(){ //creating the function for counting cold everytime the person presses yes
+            cold_count = cold_count + 1; //the cold count goes up by one everytime the press yes
         }
 		function showResults(){
-			var total_count = allergy_count + cold_count; 
+			var total_count = allergy_count + cold_count; //variable of the total count is created by adding both the allergy and cold count
 
-			var allergyPercent = total_count > 0 ? (allergy_count / total_count * 100).toFixed(2) : 0;
-            var coldPercent = total_count > 0 ? (cold_count / total_count * 100).toFixed(2) : 0;
+			var allergyPercent = total_count > 0 ? (allergy_count / total_count * 100).toFixed(2) : 0; //the equation for counting the allergy percentage which is (allergy/total) times 100 and rounds it to the second decimal place
+            var coldPercent = total_count > 0 ? (cold_count / total_count * 100).toFixed(2) : 0;  //the equation for counting the cold percentage which is (cold/total) times 100 and rounds it to the second decimal place
 
-			var resultText = document.getElementById("resultsinformation");
+			var resultText = document.getElementById("resultsinformation"); //creates a variable that can be used to change things inside later
             resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%"; 
 		} 
 			</script>
@@ -80,9 +80,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
   .page:target {
     left: 0vw;
-    z-index: 1;
+    z-index: 1; 
 }
-</style>
+</style> <!-- how to format the whole body-->
 
 <body>
 <div class="header w3-container w3-flat-carrot">
@@ -99,63 +99,87 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? -->
 	
-<div class="page" id="one">
-	<div class="header w3-container w3-flat-carrot">
+<div class="page" id="one"> <!-- created a reusable class and id-->
+	<div class="header w3-container w3-flat-carrot">  <!-- formatting the class-->
 		<h1>Question 1</h1>
 	</div>
 	
     	<div class="content w3-container">
-        <p>Are your eyes watery or itchy?</p>   
-		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-        <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+        <p>Are your eyes watery or itchy?</p>   <!-- question number 1-->
+		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>  <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is yes-->
+        <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>  <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is no-->
 
     	</div>
 </div>
 
-<div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
+<div class="page" id="two">  <!-- created a reusable class and id-->
+	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
 		<h1>Question 2</h1>
 	</div>
 	
 	<div class="content w3-container">
-		<p>Do you have a fever?</p>
-		<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-        <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		<p>Do you have a fever?</p> <!-- question number 2-->
+		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
+        <a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is yes-->
 	</div>
 </div>	
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
+<div class="page" id="three">  <!-- created a reusable class and id-->
+	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
 		<h1>Question 3</h1>
 	</div>
 	
 	<div class="content w3-container">
-		<p>Do you have a sore throat?</p>
-		<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-        <a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		<p>Do you have a sore throat?</p> <!-- question number 3-->
+		<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
+        <a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is yes-->
 	</div>
 </div>	
-	<div class="page" id="four">
-	<div class="w3-container w3-flat-carrot">
+	<div class="page" id="four">  <!-- created a reusable class and id-->
+	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
 		<h1>Question 4</h1>
 	</div>
 	
 	<div class="content w3-container">
-		<p>Are your symptoms seasonal or chronic?</p>
-		<a href="#results"  onclick="allergyAdd(); showResults();" class="w3-btn w3-black"> Yes</a>
-        <a href="#results"  onclick="coldAdd();showResults();"  class="w3-btn w3-black">No</a>
+		<p>Are your symptoms seasonal or chronic?</p> <!-- question number 4-->
+		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is yes-->
+        <a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
 	</div>
 </div>	
-	<div class="page" id="results">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Results</h1>
+	<div class="page" id="five">  <!-- created a reusable class and id-->
+	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
+		<h1>Question 5</h1>
+	</div>
+	
+	<div class="content w3-container">
+		<p>Do you have any skin rashes?</p> <!-- question number 4-->
+		<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is yes-->
+        <a href="#six"  onclick="coldAdd();" class="w3-btn w3-black">No</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
+	</div>
+		</div>	
+	
+	<div class="page" id="six">  <!-- created a reusable class and id-->
+	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
+		<h1>Question 6</h1>
+	</div>
+	
+	<div class="content w3-container">
+		<p>Do you have muscle pain?</p> <!-- question number 4-->
+		<a href="#results"  onclick="coldAdd(); showResults();" class="w3-btn w3-black"> Yes</a> <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the cold if it is yes-->
+        <a href="#results"  onclick="allergyAdd();showResults();"  class="w3-btn w3-black">No</a>  <!-- creates a link and href moves the click to the next id which in this case is two. Adds to the allergies if it is no-->
+	</div>
+</div>	
+	<div class="page" id="results">  <!-- created a reusable class and id-->
+	<div class="w3-container w3-flat-carrot"> <!-- formatting the class-->
+		<h1>Results</h1> 
 	</div>
 		<div class="content w3-container">
-			<p id="resultsinformation"></p>
-			<a href="#header" onclick="location.reload();" class="w3-btn w3-black">Start Over</a>
+			<p id="resultsinformation"></p> <!-- using the variable created before it creates a result-->
+			<a href="#header" onclick="location.reload();" class="w3-btn w3-black">Start Over</a> <!-- creates an option to restart-->
 		</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+	<p>DIY!</p> 
 </footer>
 	</div>
 </body>
 </html>
+<!--After some errors, I ran it through ChatGPT, copilot, and gemini which gave me some suggestions that were useful to create the website.-->
