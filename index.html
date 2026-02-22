@@ -85,11 +85,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
+<div class="header w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
 	
-<div id="content" class="w3-container">
+<div class="content w3-container">
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
@@ -100,11 +100,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div> <!-- adding this because it seems to be missing????? -->
 	
 <div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
+	<div class="header w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
+    	<div class="content w3-container">
         <p>Are your eyes watery or itchy?</p>   
 		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
         <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
@@ -117,7 +117,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 2</h1>
 	</div>
 	
-	<div id="content" class="w3-container">
+	<div class="content w3-container">
 		<p>Do you have a fever?</p>
 		<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
         <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
@@ -128,7 +128,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 3</h1>
 	</div>
 	
-	<div id="content" class="w3-container">
+	<div class="content w3-container">
 		<p>Do you have a sore throat?</p>
 		<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
         <a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
@@ -139,7 +139,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 4</h1>
 	</div>
 	
-	<div id="content" class="w3-container">
+	<div class="content w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 		<a href="#results"  onclick="allergyAdd(); showResults();" class="w3-btn w3-black"> Yes</a>
         <a href="#results"  onclick="coldAdd();showResults();"  class="w3-btn w3-black">No</a>
@@ -149,7 +149,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
-		<div id="content" class="w3-container">
+		<div class="content w3-container">
 			<p id="resultsinformation"></p>
 			<a href="#header" onclick="location.reload();" class="w3-btn w3-black">Start Over</a>
 		</div>
